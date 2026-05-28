@@ -22,6 +22,27 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'bank_details',
+        'age',
+        'state_of_origin',
+        'marital_status',
+        'current_address',
+        'permanent_address',
+        'occupation',
+        'workplace_details',
+        'phone_numbers',
+        'spouse_names',
+        'dependants_details',
+        'next_of_kin_name',
+        'next_of_kin_relationship',
+        'next_of_kin_address',
+        'next_of_kin_workplace',
+        'next_of_kin_occupation',
+        'next_of_kin_phone',
+        'expected_duration',
+        'rent_offer',
+        'id_proof_path',
     ];
 
     /**
@@ -45,5 +66,21 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Get all leases of the user (tenant).
+     */
+    public function leases()
+    {
+        return $this->hasMany(Lease::class, 'tenant_id');
+    }
+
+    /**
+     * Get the active lease of the user (tenant).
+     */
+    public function activeLease()
+    {
+        return $this->hasOne(Lease::class, 'tenant_id')->where('status', 'active');
     }
 }
