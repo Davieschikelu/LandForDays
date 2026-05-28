@@ -173,7 +173,7 @@
                         </svg>
                     </div>
                     <h3 class="text-sm font-semibold text-white">No payment transactions</h3>
-                    <p class="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
+                    <p class="text-xs text-slate-400 text-white mt-1 max-w-sm mx-auto">
                         Once your tenants pay rent online or you record manual payments, the ledger will populate here automatically.
                     </p>
                 </div>
